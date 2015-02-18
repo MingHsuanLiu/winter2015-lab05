@@ -30,6 +30,9 @@ class Viewer extends Application {
     {
 	$this->data['pagebody'] = 'justone';    // this is the view we want shown
 	$this->data = array_merge($this->data, (array) $this->quotes->get($id));
+        
+        // invoke the rating widget
+        $this->caboose->needed('jrating', 'hollywood');
 	$this->render();
     }
 
