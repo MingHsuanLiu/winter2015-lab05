@@ -7,7 +7,7 @@ if (!defined('BASEPATH'))
 $config['menu_choices'] = array(
     'menudata' => array(
 	array('name' => "View 'Em", 'link' => '/viewer'),
-        array('name' => "Change 'Em", 'link' => '/admin'),
+        array('name' => "Change 'Em", 'link' => '/admin'),  // added new entry in the menu bar
         )
     );
 
