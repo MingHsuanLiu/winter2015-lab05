@@ -32,7 +32,8 @@ class Admin extends Application {
                 $message .= $booboo . BR;
         }
         $this->data['message'] = $message;
-
+ 
+        
         // disable the ID# field from being edited.
         $this->data['fid'] = makeTextField('ID#', 'id', $quote->id, "Unique quote identifier, system-assigned", 10, 10, true);
 
