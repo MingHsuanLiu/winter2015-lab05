@@ -25,6 +25,14 @@ class Admin extends Application {
 
     // Present a quotation for adding/editing
     function present($quote) {
+        // format any errors
+        $message = '';
+        if (count($this->errors) > 0) {
+            foreach ($this->errors as $booboo)
+                $message .= $booboo . BR;
+        }
+        $this->data['message'] = $message;
+
         // disable the ID# field from being edited.
         $this->data['fid'] = makeTextField('ID#', 'id', $quote->id, "Unique quote identifier, system-assigned", 10, 10, true);
 
@@ -59,7 +67,6 @@ class Admin extends Application {
         if (strlen($record->what) < 20)
             $this->errors[] = 'A quotation must be at least 20 characters long.';
 
-        
         // redisplay if any errors
         if (count($this->errors) > 0) {
             $this->present($record);
