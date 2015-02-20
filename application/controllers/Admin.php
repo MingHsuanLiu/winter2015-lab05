@@ -59,6 +59,7 @@ class Admin extends Application {
         if (strlen($record->what) < 20)
             $this->errors[] = 'A quotation must be at least 20 characters long.';
 
+        
         // redisplay if any errors
         if (count($this->errors) > 0) {
             $this->present($record);
